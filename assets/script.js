@@ -147,6 +147,7 @@ submitBtnEl.on("click", function(){
     var initials = textboxEl.val().trim();
     setHighScore(initials);
     showScores();
+    textboxEl.val("");
 });
 
 quizBtnsEl.on("click", function(){
