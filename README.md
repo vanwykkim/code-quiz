@@ -12,8 +12,8 @@ This program is a timed coding quiz that can save high scores
 
 ## Screenshot
 
-![Screenshot of coding quiz](2022-10-13.png)
-![Screenshot of high scores](2022-10-13%20(1).png)
+![Screenshot of coding quiz](need.png)
+![Screenshot of high scores](need.png)
 
 
 ## Link to Project

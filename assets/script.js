@@ -3,6 +3,7 @@ var submitBtn = document.querySelector("#submit");
 var clearScoresBtn = document.querySelector("#clearHighScores");
 var goBackBtn = document.querySelector("#goBack");
 var timeEl = document.querySelector(".timerShow");
+var timerInterval
 
 //hold out here to keep value when function ends to use for score
 var timerTime;
@@ -10,16 +11,18 @@ var timerTime;
 var complete;
 
 function setTime(){
-    var timerInterval = setInterval(function() {
-        timerTime--;
+    timerInterval = setInterval(function() {
+        
         timeEl.textContent =  "Time left: " + timerTime;
-        console.log("timerTime");
-        //stop if out of time or out of questions
-        if(timerTime === 0 || complete === 0) {
+        timerTime--;
+       
+       
+    }, 1000);
+     //stop if out of time or out of questions
+    if(timerTime <= 0 || complete <= 0) {
         // Stops countdown
         clearInterval(timerInterval);
         }
-    }, 1000);
 }   
 
 //function to do the quiz

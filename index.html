@@ -9,17 +9,43 @@
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
   </head>
   <body>
-<header id="header" class = "header">
-    <div id="viewScores" class="viewScoresClass">
+    <header id="header" class = "header">
+      <div id="viewScores" class="viewScoresClass">
         <h1>View High Scores</h1>   
+      </div>
+      <div id="timerShow" class="timerShow">
+        <h2>Timer: </h2>
+      </div>
+    </header>
+  <div class = "container" >
+    <div id = "startScreen" >
+      <h3>CODING QUIZ CHALLENGE</h3>
+      <p>Try to answer the following code related questions within the time limit. <br> Keep in mind incorrect answers will negatively impact your <br>
+      score by 5 seconds. Good luck!</p>
+      <button id="startQuiz" class="btn">Start Quiz</button>
     </div>
-    <div id="timerShow" class="timerShow">
-        <h1>Timer: </h1>
+    <div id = "quizScreen" >
+      <h3 id = "quizQuestion">QUIZ QUESTION</h3>
+      <div id="quizBtns">
+        <button id = "answer1" class="button qBtn"></button>
+        <button id = "answer2" class="button qBtn"></button>
+        <button id = "answer3" class="button qBtn"></button>
+        <button id = "answer4" class="button qBtn"></button>
+      </div>
+      <p id = "correct" display ="visible"></p>
     </div>
-</header>
-<div >
-<button id="startQuiz" class="btn">Start Quiz</button>
-</div>
+
+    <div id = "endScreen"  >
+      <h3>HIGH SCORES</h3>
+      <input type = "text" id = "initials" display="visible" placeholder = "initials here"></input>
+<!-- add to high score and then show high scores and clear and start over buttons -->
+      <button id = "submitBtn" display="visible" class="submit btn btn">Submit</button>
+      <div id="startOver" >    
+        <button id = "startOverBtn" display="visible" class ="button">Start Over</button>
+        <button id = "clearScores" display="visible" class= "button">Clear Scores</button>
+      </div>
+    </div>
+  </div>
     <script src="assets/script.js"></script>
   </body>
 </html>
