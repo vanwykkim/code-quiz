@@ -51,3 +51,48 @@ h2{
     margin-top: 20px;
     border-top: 2px dotted gray
 }
+
+.modal {
+    margin-top: 20vh;
+    margin-left:20vw;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 500px; 
+    height: 400px;
+    overflow: auto; /* Enable scroll if needed */
+    border: 5px solid blue;
+    border-radius: 5px;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: lightblue;
+    color:black;
+  }
+
+  #modalHeader{
+    font-size: 40px;
+    font-weight: bolder;
+    background-color: blue;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
