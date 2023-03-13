@@ -1,6 +1,12 @@
 //Jquery Dom Hooks to elements
 var startBtnEl = $("#startQBtn");
+var quizBtn1El = $("#1");
+var quizBtn2El = $("#2");
+var quizBtn3El = $("#2");
+var quizBtn4El = $("#4");
+var correctEl = $("#correct");
 var submitBtnEl = $("#submitBtn");
+var quizQuestionEl = $("#quizQuestion");
 var quizBtnsEl = $(".qBtn");
 var clearScoresBtnEl = $("#clearScoresBtn");
 var startOverBtnEl = $("#startOverBtn");
@@ -17,11 +23,18 @@ var scoresListEl = $('#scoresList');
 //var myModalEl = $('#myModal');
 var timerInterval;
 var myArray = new Array();
+var quizArray = new Array();
 
 //hold out here to keep value when function ends to use for score
 var timerTime;
 //when zero quiz is complete
 var complete;
+var correctAnswer;
+var quizQuestion = "";
+var answer1 = "";
+var answer2 = "";
+var answer3 = "";
+var answer4 = "";
 
 function init(){
     startScreenEl.show();
@@ -32,9 +45,10 @@ function init(){
 }
 
 function setTime(){
-    timerTime = 11;
+    //in startQuiz don't need here
+    //timerTime = 11;
     //number of questions to ask
-    complete = 5;
+    //complete = 5;
     
   
     timerInterval = setInterval(function() {
@@ -47,7 +61,7 @@ function setTime(){
           
             quizScreenEl.hide();
             endScreenEl.show();
-            timeEl.textContent =  "QUIZ is over - Time left: 0";
+            timeEl.textContent =  "QUIZ is over - Time left: " + timerTime;
         }
        
     }, 1000);
@@ -58,22 +72,19 @@ function setTime(){
 //function to do the quiz
 function startQuiz(){
     //amount of time for quiz
-    //timerTime = 75;
+    timerTime = 75;
     //number of questions to ask
-   // complete = 5;
+    complete = 5;
     setTime();
-    // if(timerTime <= 0 || complete <= 0) {
-    //     // Stops countdown
-    //     clearInterval(timerInterval);
-      
-    //     quizScreenEl.hide();
-    //     endScreenEl.show();
-    // }
-    //remove 5 seconds for wrong answers
-    // while(timerTime > 0 && complete > 0){
-    //     complete--;
 
-    // }
+    //display first question
+    quizQuestionEl.text("Which one of these is NOT a Javascript naming convention?");
+    quizBtn1El.text("All names start with a letter or underscore");
+    quizBtn2El.text("Names are case-sensitive");
+    quizBtn3El.text("Names must be less than 50 char");
+    quizBtn4El.text("Names have no length limit");
+    correctAnswer = 3;
+    correctEl.text("");  
 
 }
 
@@ -151,8 +162,59 @@ submitBtnEl.on("click", function(){
 });
 
 quizBtnsEl.on("click", function(){
-    var answer = this.innerHTML;
-
+    var answer = this.id;
+    complete--; 
+    console.log("Complete " + complete);
+    console.log("Answer " + answer);
+     if (correctAnswer==answer) {
+       correctEl.text("Your Last Answer Was: Correct");
+     } else {
+       correctEl.text("Your Last Answer Was: Wrong");
+       timerTime = timerTime - 5;
+       console.log(timerTime);
+     }
+     //get next question
+     switch(complete){
+        case 4:
+            quizQuestion = "";
+            answer1 = "";
+            answer2 = "";
+            answer3 = "";
+            answer4 = "";
+            correctAnswer = ;
+            break;
+        case 3:
+            quizQuestion = "";
+            answer1 = "";
+            answer2 = "";
+            answer3 = "";
+            answer4 = "";
+            correctAnswer = ;
+            break;
+        case 2:
+            quizQuestion = "";
+            answer1 = "";
+            answer2 = "";
+            answer3 = "";
+            answer4 = "";
+            correctAnswer = ;
+            break;
+        case 1:
+            quizQuestion = "";
+            answer1 = "";
+            answer2 = "";
+            answer3 = "";
+            answer4 = "";
+            correctAnswer = ;
+            break;
+        default:
+            break;
+     }
+     quizQuestionEl.text(quizQuestion);
+     quizBtn1El.text(answer1);
+     quizBtn2El.text(answer2);
+     quizBtn3El.text(answer3);
+     quizBtn4El.text(answer4);
 });
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
