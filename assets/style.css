@@ -24,6 +24,14 @@ h2{
     padding-right: 60px;
     font-size: 30px;
 } 
+h3{
+    font-size: 25px;
+    font-weight: bolder;
+} 
+input{
+    padding: 10px;
+    font-size: 16px;
+}
 .container{
     display:flex-row;
 }
@@ -32,24 +40,54 @@ h2{
     display: visible;
     display: flex-column;
     justify-content: center;
+    margin-left: 500px
+}
+.btn{
+    margin: 15px;
+    font-weight: bold;
+    font-size: 15px;
+    color: darkblue;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+
+}
+.btn:hover{
+    background-color: lime;
+}
+.qBtn{
+    margin-bottom: 20px;
+    padding: 10px;
+    font-weight: bolder;
+    font-size: 20px;
+    color: white;
+    background-color: darkblue;
+    border-radius: 10px;
+    
+}
+.qBtn:hover{
+    color: lime;
 }
 
 #quizScreen{
     display: visible;
     display: flex-column;
     justify-content: center;
+    margin-left: 500px;
+    margin-right: 300px;
 }
 
 #startScreen{
     display: visible;
     display: flex-column;
     justify-content: center;
+    margin-left: 500px;
 }
 
 #correct{
     display: flex;
     margin-top: 20px;
-    border-top: 2px dotted gray
+    border-top: 2px dotted gray;
 }
 
 .modal {

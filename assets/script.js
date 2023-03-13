@@ -2,7 +2,7 @@
 var startBtnEl = $("#startQBtn");
 var quizBtn1El = $("#1");
 var quizBtn2El = $("#2");
-var quizBtn3El = $("#2");
+var quizBtn3El = $("#3");
 var quizBtn4El = $("#4");
 var correctEl = $("#correct");
 var submitBtnEl = $("#submitBtn");
@@ -61,6 +61,9 @@ function setTime(){
           
             quizScreenEl.hide();
             endScreenEl.show();
+            if(timerTime < 0){
+                timerTime = 0;
+            }
             timeEl.textContent =  "QUIZ is over - Time left: " + timerTime;
         }
        
@@ -176,36 +179,36 @@ quizBtnsEl.on("click", function(){
      //get next question
      switch(complete){
         case 4:
-            quizQuestion = "";
-            answer1 = "";
-            answer2 = "";
-            answer3 = "";
-            answer4 = "";
-            correctAnswer = ;
+            quizQuestion = "In JavaScript a global variable...";
+            answer1 = "is only available in 1 function";
+            answer2 = "is available for every function in that file";
+            answer3 = "is always a constant";
+            answer4 = "has an icon of the earth";
+            correctAnswer = 2;
             break;
         case 3:
-            quizQuestion = "";
-            answer1 = "";
-            answer2 = "";
-            answer3 = "";
-            answer4 = "";
-            correctAnswer = ;
+            quizQuestion = "In JavaScript functions ...";
+            answer1 = "are objects";
+            answer2 = "are people";
+            answer3 = "always return true";
+            answer4 = "never return anything";
+            correctAnswer = 1;
             break;
         case 2:
-            quizQuestion = "";
-            answer1 = "";
-            answer2 = "";
-            answer3 = "";
-            answer4 = "";
-            correctAnswer = ;
+            quizQuestion = "Another way to represent a JavaScript Empty String \"\" is NOT....";
+            answer1 = "undefined";
+            answer2 = "untrue";
+            answer3 = "null";
+            answer4 = "NaN";
+            correctAnswer = "2";
             break;
         case 1:
-            quizQuestion = "";
-            answer1 = "";
-            answer2 = "";
-            answer3 = "";
-            answer4 = "";
-            correctAnswer = ;
+            quizQuestion = "In javaScript A && B will evaluate to true if.....";
+            answer1 = "only A is true";
+            answer2 = "only B is true";
+            answer3 = "both A and B are true";
+            answer4 = "both A and B are false";
+            correctAnswer = "3";
             break;
         default:
             break;
